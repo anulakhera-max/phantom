@@ -3,6 +3,7 @@
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
+const { pushData } = require('../core/github-push.cjs');
 
 // ── CONFIG ──────────────────────────────────────────────
 const EDGAR_BASE = 'data.sec.gov';
@@ -166,6 +167,11 @@ async function run() {
     fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2));
     console.log(`[EDGAR] ✓ Written to ${OUTPUT_PATH}`);
     console.log(`[EDGAR] Complete — ${allSignals.length} signals from ${targets.length} entities`);
+    await pushData(
+    'data/signals/form4.json',
+    output,
+    `data: EDGAR scan — ${allSignals.length} signals`
+  );
   } catch (err) {
     console.error('[EDGAR] Failed to write output:', err.message);
   }
