@@ -1,6 +1,6 @@
 {
   "meta": {
-    "parsed_at": "2026-06-02T02:37:25.436Z",
+    "parsed_at": "2026-06-02T02:51:09.009Z",
     "entities_processed": 11,
     "entities_successful": 1,
     "total_aum_tracked_b": 166309.06
@@ -58157,7 +58157,7 @@
           "put_call": null
         }
       ],
-      "parsed_at": "2026-06-02T02:37:21.647Z"
+      "parsed_at": "2026-06-02T02:51:05.209Z"
     }
   ]
 }
