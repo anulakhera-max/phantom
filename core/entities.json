@@ -152,7 +152,7 @@
       "name": "Elon Musk",
       "type": "individual",
       "tier": "A",
-      "cik": "multiple",
+      "cik": "0001494730",
       "signals": ["form4", "13D", "13G"],
       "social": ["https://x.com/elonmusk"],
       "notes": "Prolific filer — X posts move markets same day — highest priority monitor"
