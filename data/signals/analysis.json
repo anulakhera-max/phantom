@@ -1,0 +1,295 @@
+{
+  "meta": {
+    "analyzed_at": "2026-06-02T03:56:29.515Z",
+    "entity_count": 11,
+    "model": "claude-sonnet-4-20250514"
+  },
+  "analyses": [
+    {
+      "entity_id": "blackrock",
+      "entity_name": "BlackRock",
+      "aum_b": 4418304.73,
+      "total_positions": 48161,
+      "top_3": [
+        {
+          "name": "MICROSOFT CORP",
+          "value_b": 87251.1
+        },
+        {
+          "name": "NVIDIA CORPORATION",
+          "value_b": 81016.4
+        },
+        {
+          "name": "APPLE INC",
+          "value_b": 78699.52
+        }
+      ],
+      "analysis": {
+        "the_position": "",
+        "the_thesis": "",
+        "the_signal": ""
+      },
+      "analyzed_at": "2026-06-02T03:56:17.240Z"
+    },
+    {
+      "entity_id": "vanguard",
+      "entity_name": "Vanguard",
+      "aum_b": 6897676.08,
+      "total_positions": 17686,
+      "top_3": [
+        {
+          "name": "NVIDIA CORPORATION",
+          "value_b": 377984.86
+        },
+        {
+          "name": "APPLE INC",
+          "value_b": 347723
+        },
+        {
+          "name": "MICROSOFT CORP",
+          "value_b": 311470.45
+        }
+      ],
+      "analysis": {
+        "the_position": "",
+        "the_thesis": "",
+        "the_signal": ""
+      },
+      "analyzed_at": "2026-06-02T03:56:18.324Z"
+    },
+    {
+      "entity_id": "statestreet",
+      "entity_name": "State Street",
+      "aum_b": 2896359.02,
+      "total_positions": 4269,
+      "top_3": [
+        {
+          "name": "NVIDIA CORPORATION",
+          "value_b": 173343.32
+        },
+        {
+          "name": "APPLE INC",
+          "value_b": 152868.23
+        },
+        {
+          "name": "MICROSOFT CORP",
+          "value_b": 113534.21
+        }
+      ],
+      "analysis": {
+        "the_position": "",
+        "the_thesis": "",
+        "the_signal": ""
+      },
+      "analyzed_at": "2026-06-02T03:56:19.398Z"
+    },
+    {
+      "entity_id": "bridgewater",
+      "entity_name": "Bridgewater Associates",
+      "aum_b": 22404.55,
+      "total_positions": 993,
+      "top_3": [
+        {
+          "name": "STATE STR SPDR S&amp;P 500 ETF T",
+          "value_b": 2838.64
+        },
+        {
+          "name": "ISHARES TR",
+          "value_b": 1750
+        },
+        {
+          "name": "AMAZON COM INC",
+          "value_b": 914.04
+        }
+      ],
+      "analysis": {
+        "the_position": "",
+        "the_thesis": "",
+        "the_signal": ""
+      },
+      "analyzed_at": "2026-06-02T03:56:20.472Z"
+    },
+    {
+      "entity_id": "renaissance",
+      "entity_name": "Renaissance Technologies",
+      "aum_b": 63929.89,
+      "total_positions": 3213,
+      "top_3": [
+        {
+          "name": "UNITED THERAPEUTICS CORP DEL",
+          "value_b": 1059.67
+        },
+        {
+          "name": "PALANTIR TECHNOLOGIES INC",
+          "value_b": 1021.9
+        },
+        {
+          "name": "APPLE INC",
+          "value_b": 780.57
+        }
+      ],
+      "analysis": {
+        "the_position": "",
+        "the_thesis": "",
+        "the_signal": ""
+      },
+      "analyzed_at": "2026-06-02T03:56:21.543Z"
+    },
+    {
+      "entity_id": "deshaw",
+      "entity_name": "DE Shaw",
+      "aum_b": 166309.06,
+      "total_positions": 5804,
+      "top_3": [
+        {
+          "name": "NVIDIA CORPORATION",
+          "value_b": 1657.95
+        },
+        {
+          "name": "BOSTON SCIENTIFIC CORP",
+          "value_b": 1278.21
+        },
+        {
+          "name": "BROADCOM INC",
+          "value_b": 1225.64
+        }
+      ],
+      "analysis": {
+        "the_position": "",
+        "the_thesis": "",
+        "the_signal": ""
+      },
+      "analyzed_at": "2026-06-02T03:56:22.617Z"
+    },
+    {
+      "entity_id": "goldman",
+      "entity_name": "Goldman Sachs",
+      "aum_b": 870939.69,
+      "total_positions": 13579,
+      "top_3": [
+        {
+          "name": "NVIDIA CORPORATION",
+          "value_b": 26501.13
+        },
+        {
+          "name": "APPLE INC",
+          "value_b": 23286.6
+        },
+        {
+          "name": "STATE STR SPDR S&amp;P 500 ETF T",
+          "value_b": 19562.34
+        }
+      ],
+      "analysis": {
+        "the_position": "",
+        "the_thesis": "",
+        "the_signal": ""
+      },
+      "analyzed_at": "2026-06-02T03:56:23.717Z"
+    },
+    {
+      "entity_id": "jpmorgan",
+      "entity_name": "JPMorgan Chase",
+      "aum_b": 3085.47,
+      "total_positions": 378,
+      "top_3": [
+        {
+          "name": "ISHARES TR",
+          "value_b": 433.45
+        },
+        {
+          "name": "STATE STR SPDR S&amp;P 500 ETF T",
+          "value_b": 315.99
+        },
+        {
+          "name": "ISHARES TR",
+          "value_b": 186.9
+        }
+      ],
+      "analysis": {
+        "the_position": "",
+        "the_thesis": "",
+        "the_signal": ""
+      },
+      "analyzed_at": "2026-06-02T03:56:24.792Z"
+    },
+    {
+      "entity_id": "morganstanley",
+      "entity_name": "Morgan Stanley",
+      "aum_b": 1659786.62,
+      "total_positions": 45985,
+      "top_3": [
+        {
+          "name": "APPLE INC",
+          "value_b": 25710.98
+        },
+        {
+          "name": "NVIDIA CORPORATION",
+          "value_b": 19696.47
+        },
+        {
+          "name": "NVIDIA CORPORATION",
+          "value_b": 17540.21
+        }
+      ],
+      "analysis": {
+        "the_position": "",
+        "the_thesis": "",
+        "the_signal": ""
+      },
+      "analyzed_at": "2026-06-02T03:56:26.365Z"
+    },
+    {
+      "entity_id": "leopold",
+      "entity_name": "Leopold Aschenbrenner",
+      "aum_b": 13676.66,
+      "total_positions": 42,
+      "top_3": [
+        {
+          "name": "VANECK ETF TRUST",
+          "value_b": 2042.72
+        },
+        {
+          "name": "NVIDIA CORPORATION",
+          "value_b": 1568.26
+        },
+        {
+          "name": "ORACLE CORP",
+          "value_b": 1072.87
+        }
+      ],
+      "analysis": {
+        "the_position": "",
+        "the_thesis": "",
+        "the_signal": ""
+      },
+      "analyzed_at": "2026-06-02T03:56:27.442Z"
+    },
+    {
+      "entity_id": "raydalio",
+      "entity_name": "Ray Dalio",
+      "aum_b": 22404.55,
+      "total_positions": 993,
+      "top_3": [
+        {
+          "name": "STATE STR SPDR S&amp;P 500 ETF T",
+          "value_b": 2838.64
+        },
+        {
+          "name": "ISHARES TR",
+          "value_b": 1750
+        },
+        {
+          "name": "AMAZON COM INC",
+          "value_b": 914.04
+        }
+      ],
+      "analysis": {
+        "the_position": "",
+        "the_thesis": "",
+        "the_signal": ""
+      },
+      "analyzed_at": "2026-06-02T03:56:28.514Z"
+    }
+  ]
+}
