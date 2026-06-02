@@ -9,12 +9,20 @@ console.log('[PHANTOM] ' + new Date().toISOString());
 // Each agent runs on its own cron. Agents not yet built
 // are stubbed here so the schedule is visible and ready.
 
-// EDGAR — Form 4, 13F, 13D/G — every 2 hours
+// EDGAR — Form 4, 13F, 13D/G — every 2 hours (free, time-sensitive)
 cron.schedule('0 */2 * * *', async () => {
   console.log('[EDGAR] Running Form 4 collector...');
   await require('./agents/edgar.cjs').run();
+});
+
+// Filing reader — once daily at 6am EST (13F positions, quarterly data)
+cron.schedule('0 11 * * *', async () => {
   console.log('[FILING-READER] Parsing positions...');
   await require('./agents/filing-reader.cjs').run();
+});
+
+// Claude analyzer — every 12 hours (expensive — morning + evening)
+cron.schedule('0 11,23 * * *', async () => {
   console.log('[ANALYZER] Running Claude analysis...');
   await require('./agents/analyzer.cjs').run();
 });
