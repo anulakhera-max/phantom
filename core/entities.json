@@ -1,1 +1,335 @@
-
+{
+  "meta": {
+    "version": "1.0",
+    "updated": "2026-06-01",
+    "description": "PHANTOM master entity registry — all tracked capital allocators"
+  },
+  "entities": [
+    {
+      "id": "blackrock",
+      "name": "BlackRock",
+      "type": "institutional",
+      "tier": "A",
+      "cik": "0001364742",
+      "signals": ["13F", "13D", "8-K", "proxy"],
+      "notes": "Largest asset manager globally — 13F velocity and proxy votes"
+    },
+    {
+      "id": "vanguard",
+      "name": "Vanguard",
+      "type": "institutional",
+      "tier": "A",
+      "cik": "0000102909",
+      "signals": ["13F", "13D", "proxy"],
+      "notes": "Compare vs BlackRock for divergence signal"
+    },
+    {
+      "id": "statestreet",
+      "name": "State Street",
+      "type": "institutional",
+      "tier": "A",
+      "cik": "0000093751",
+      "signals": ["13F", "13D", "proxy"],
+      "notes": "Third leg of the passive giant triangle"
+    },
+    {
+      "id": "citadel",
+      "name": "Citadel LLC",
+      "type": "hedge_fund",
+      "tier": "A",
+      "cik": "0001423298",
+      "signals": ["13F", "dark_pool_shadow"],
+      "notes": "13F partial — shadow layer more valuable than filing"
+    },
+    {
+      "id": "bridgewater",
+      "name": "Bridgewater Associates",
+      "type": "hedge_fund",
+      "tier": "A",
+      "cik": "0001350694",
+      "signals": ["13F"],
+      "notes": "Ray Dalio founded — macro focus"
+    },
+    {
+      "id": "renaissance",
+      "name": "Renaissance Technologies",
+      "type": "hedge_fund",
+      "tier": "A",
+      "cik": "0001037389",
+      "signals": ["13F"],
+      "notes": "Medallion Fund — quant pioneer"
+    },
+    {
+      "id": "twosigma",
+      "name": "Two Sigma",
+      "type": "hedge_fund",
+      "tier": "A",
+      "cik": "0001441236",
+      "signals": ["13F"],
+      "notes": "Data-driven quant fund"
+    },
+    {
+      "id": "deshaw",
+      "name": "DE Shaw",
+      "type": "hedge_fund",
+      "tier": "A",
+      "cik": "0001009207",
+      "signals": ["13F"],
+      "notes": "Computational finance pioneer"
+    },
+    {
+      "id": "goldman",
+      "name": "Goldman Sachs",
+      "type": "bank",
+      "tier": "A",
+      "cik": "0000886982",
+      "signals": ["13F", "fed_h8", "primary_dealer"],
+      "notes": "Primary dealer — Treasury positioning signal"
+    },
+    {
+      "id": "jpmorgan",
+      "name": "JPMorgan Chase",
+      "type": "bank",
+      "tier": "A",
+      "cik": "0000019617",
+      "signals": ["13F", "fed_h8", "primary_dealer"],
+      "notes": "Largest US bank — dealer data most relevant"
+    },
+    {
+      "id": "morganstanley",
+      "name": "Morgan Stanley",
+      "type": "bank",
+      "tier": "A",
+      "cik": "0000895421",
+      "signals": ["13F", "primary_dealer"],
+      "notes": "Wealth management + institutional"
+    },
+    {
+      "id": "leopold",
+      "name": "Leopold Aschenbrenner",
+      "type": "individual",
+      "tier": "A",
+      "cik": "0002045724",
+      "signals": ["13F"],
+      "entity_name": "Situational Awareness LP",
+      "aum": "13680000000",
+      "social": ["https://x.com/leopoldasc"],
+      "notes": "AI infrastructure thesis — $13.68B AUM — Q1 2026 filed May 18"
+    },
+    {
+      "id": "cathiewood",
+      "name": "Cathie Wood / ARK Invest",
+      "type": "individual",
+      "tier": "A",
+      "cik": "0001579982",
+      "signals": ["13F", "daily_holdings"],
+      "social": ["https://x.com/CathieDWood"],
+      "notes": "Most transparent fund alive — publishes holdings daily"
+    },
+    {
+      "id": "raydalio",
+      "name": "Ray Dalio",
+      "type": "individual",
+      "tier": "A",
+      "cik": "0001350694",
+      "signals": ["13F"],
+      "social": ["https://x.com/RayDalio"],
+      "notes": "Bridgewater founder — macro thesis public on LinkedIn/X"
+    },
+    {
+      "id": "saylor",
+      "name": "Michael Saylor",
+      "type": "individual",
+      "tier": "A",
+      "cik": null,
+      "signals": ["form4", "8-K"],
+      "company": "Strategy (MSTR)",
+      "social": ["https://x.com/saylor"],
+      "notes": "Bitcoin accumulation via Form 4 + 8-K — signals before announcements"
+    },
+    {
+      "id": "musk",
+      "name": "Elon Musk",
+      "type": "individual",
+      "tier": "A",
+      "cik": "multiple",
+      "signals": ["form4", "13D", "13G"],
+      "social": ["https://x.com/elonmusk"],
+      "notes": "Prolific filer — X posts move markets same day — highest priority monitor"
+    },
+    {
+      "id": "altman",
+      "name": "Sam Altman",
+      "type": "individual",
+      "tier": "A",
+      "cik": null,
+      "signals": ["form4", "13D"],
+      "social": ["https://x.com/sama"],
+      "notes": "OpenAI CEO — triggers thresholds on public cos — AI sector directional"
+    },
+    {
+      "id": "chamath",
+      "name": "Chamath Palihapitiya",
+      "type": "individual",
+      "tier": "B",
+      "cik": null,
+      "signals": ["form4", "social"],
+      "entity_name": "Social Capital",
+      "social": ["https://x.com/chamath"],
+      "podcast": "All-In",
+      "notes": "Mostly private — thesis reveals on X before positions"
+    },
+    {
+      "id": "sacks",
+      "name": "David Sacks",
+      "type": "individual",
+      "tier": "B",
+      "cik": null,
+      "signals": ["form4", "ethics_disclosure", "social"],
+      "entity_name": "Craft Ventures",
+      "social": ["https://x.com/DavidSacks"],
+      "podcast": "All-In",
+      "notes": "US AI/Crypto Czar — ethics disclosures now required — policy + portfolio overlap"
+    },
+    {
+      "id": "friedberg",
+      "name": "David Friedberg",
+      "type": "individual",
+      "tier": "B",
+      "cik": null,
+      "signals": ["form4", "social"],
+      "entity_name": "The Production Board",
+      "social": ["https://x.com/friedberg"],
+      "podcast": "All-In",
+      "notes": "Ag/biotech private — food tech thesis"
+    },
+    {
+      "id": "calacanis",
+      "name": "Jason Calacanis",
+      "type": "individual",
+      "tier": "B",
+      "cik": null,
+      "signals": ["social"],
+      "entity_name": "LAUNCH Fund",
+      "social": ["https://x.com/Jason"],
+      "podcast": "All-In",
+      "notes": "Early stage angel — signal via social + podcast thesis"
+    },
+    {
+      "id": "burry",
+      "name": "Michael Burry",
+      "type": "individual",
+      "tier": "C",
+      "cik": "0001649339",
+      "signals": ["social"],
+      "entity_name": "Scion Asset Management",
+      "social": ["https://x.com/michaeljburry"],
+      "notes": "DE-REGISTERED Nov 2025 — final 13F was Q3 2025 — X posts only now — RARE posts = high signal"
+    },
+    {
+      "id": "gurley",
+      "name": "Bill Gurley",
+      "type": "individual",
+      "tier": "C",
+      "cik": null,
+      "signals": ["social"],
+      "entity_name": "Benchmark Capital",
+      "social": ["https://x.com/bgurley"],
+      "podcast": "All-In (guest)",
+      "notes": "VC — mostly private — social signal only"
+    },
+    {
+      "id": "diamandis",
+      "name": "Peter Diamandis",
+      "type": "individual",
+      "tier": "B",
+      "cik": null,
+      "signals": ["form4", "social"],
+      "social": ["https://x.com/PeterDiamandis"],
+      "podcast": "Moonshots",
+      "notes": "XPRIZE/Abundance360 — tech sector narrative host"
+    },
+    {
+      "id": "norway_gpfg",
+      "name": "Norway Government Pension Fund Global",
+      "type": "swf",
+      "tier": "D",
+      "cik": null,
+      "signals": ["gpfg_api", "proxy_votes"],
+      "aum": "1800000000000",
+      "api": "https://www.nbim.no",
+      "notes": "Most transparent SWF — full holdings + every proxy vote public"
+    },
+    {
+      "id": "cic",
+      "name": "China Investment Corporation",
+      "type": "swf",
+      "tier": "D",
+      "cik": null,
+      "signals": ["13F_partial", "fara", "press"],
+      "aum": "1500000000000",
+      "notes": "US-registered entities may file 13F — FARA lobbying filings key signal"
+    },
+    {
+      "id": "adia",
+      "name": "Abu Dhabi Investment Authority",
+      "type": "swf",
+      "tier": "D",
+      "cik": null,
+      "signals": ["13F_partial", "fara", "press"],
+      "aum": "1100000000000",
+      "notes": "Heavy private equity focus — press releases precede moves"
+    },
+    {
+      "id": "pif",
+      "name": "Public Investment Fund (Saudi Arabia)",
+      "type": "swf",
+      "tier": "D",
+      "cik": null,
+      "signals": ["13F_partial", "fara", "press", "aviation"],
+      "aum": "1100000000000",
+      "notes": "Most aggressive SWF — LIV Golf, Lucid, gaming — jet tracking high value"
+    },
+    {
+      "id": "gic",
+      "name": "GIC Private Limited",
+      "type": "swf",
+      "tier": "D",
+      "cik": null,
+      "signals": ["13F_partial", "annual_report"],
+      "aum": "770000000000",
+      "notes": "Singapore — annual report most readable disclosure"
+    },
+    {
+      "id": "koch",
+      "name": "Koch Family",
+      "type": "family_office",
+      "tier": "B",
+      "cik": null,
+      "signals": ["990_filing", "fara", "lobbying"],
+      "entity_name": "Koch Industries",
+      "notes": "990 filings via ProPublica — energy/chemical/commodity equity — massive lobbying spend"
+    },
+    {
+      "id": "rockefeller",
+      "name": "Rockefeller Family",
+      "type": "family_office",
+      "tier": "B",
+      "cik": null,
+      "signals": ["990_filing"],
+      "entity_name": "Rockefeller Foundation",
+      "notes": "Foundation 990 via ProPublica — equity holdings annually"
+    },
+    {
+      "id": "rothschild",
+      "name": "Rothschild Family",
+      "type": "family_office",
+      "tier": "B",
+      "cik": null,
+      "signals": ["companies_house", "13F_partial"],
+      "entity_name": "Rothschild & Co",
+      "companies_house": "https://find-and-update.company-information.service.gov.uk",
+      "notes": "UK Companies House primary signal — US entities file partial 13F"
+    }
+  ]
+}
