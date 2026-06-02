@@ -1,6 +1,6 @@
 {
   "meta": {
-    "collected_at": "2026-06-02T12:00:05.074Z",
+    "collected_at": "2026-06-02T14:00:04.757Z",
     "entity_count": 15,
     "signal_count": 12,
     "breaking_points": []
@@ -34,7 +34,7 @@
           "url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424006999/"
         }
       ],
-      "collected_at": "2026-06-02T12:00:00.352Z"
+      "collected_at": "2026-06-02T14:00:00.225Z"
     },
     {
       "entity_id": "vanguard",
@@ -71,7 +71,7 @@
           "url": "https://www.sec.gov/Archives/edgar/data/102909/000175272425099331/"
         }
       ],
-      "collected_at": "2026-06-02T12:00:00.656Z"
+      "collected_at": "2026-06-02T14:00:00.552Z"
     },
     {
       "entity_id": "statestreet",
@@ -115,7 +115,7 @@
           "url": "https://www.sec.gov/Archives/edgar/data/93751/000009375125000351/"
         }
       ],
-      "collected_at": "2026-06-02T12:00:00.931Z"
+      "collected_at": "2026-06-02T14:00:00.816Z"
     },
     {
       "entity_id": "bridgewater",
@@ -159,7 +159,7 @@
           "url": "https://www.sec.gov/Archives/edgar/data/1350694/000117266125001828/"
         }
       ],
-      "collected_at": "2026-06-02T12:00:01.494Z"
+      "collected_at": "2026-06-02T14:00:01.362Z"
     },
     {
       "entity_id": "renaissance",
@@ -203,7 +203,7 @@
           "url": "https://www.sec.gov/Archives/edgar/data/1037389/000103738925000023/"
         }
       ],
-      "collected_at": "2026-06-02T12:00:01.799Z"
+      "collected_at": "2026-06-02T14:00:01.656Z"
     },
     {
       "entity_id": "deshaw",
@@ -247,7 +247,7 @@
           "url": "https://www.sec.gov/Archives/edgar/data/1009207/000110465925049422/"
         }
       ],
-      "collected_at": "2026-06-02T12:00:02.390Z"
+      "collected_at": "2026-06-02T14:00:02.194Z"
     },
     {
       "entity_id": "goldman",
@@ -284,7 +284,7 @@
           "url": "https://www.sec.gov/Archives/edgar/data/886982/000076999325000537/"
         }
       ],
-      "collected_at": "2026-06-02T12:00:02.782Z"
+      "collected_at": "2026-06-02T14:00:02.632Z"
     },
     {
       "entity_id": "jpmorgan",
@@ -321,7 +321,7 @@
           "url": "https://www.sec.gov/Archives/edgar/data/19617/000091918525000009/"
         }
       ],
-      "collected_at": "2026-06-02T12:00:03.301Z"
+      "collected_at": "2026-06-02T14:00:03.053Z"
     },
     {
       "entity_id": "morganstanley",
@@ -358,7 +358,7 @@
           "url": "https://www.sec.gov/Archives/edgar/data/895421/000089542125000499/"
         }
       ],
-      "collected_at": "2026-06-02T12:00:03.757Z"
+      "collected_at": "2026-06-02T14:00:03.428Z"
     },
     {
       "entity_id": "leopold",
@@ -402,7 +402,7 @@
           "url": "https://www.sec.gov/Archives/edgar/data/2045724/000204572425000002/"
         }
       ],
-      "collected_at": "2026-06-02T12:00:04.033Z"
+      "collected_at": "2026-06-02T14:00:03.738Z"
     },
     {
       "entity_id": "raydalio",
@@ -446,7 +446,7 @@
           "url": "https://www.sec.gov/Archives/edgar/data/1350694/000117266125001828/"
         }
       ],
-      "collected_at": "2026-06-02T12:00:04.590Z"
+      "collected_at": "2026-06-02T14:00:04.291Z"
     },
     {
       "entity_id": "musk",
@@ -490,7 +490,7 @@
           "url": "https://www.sec.gov/Archives/edgar/data/1494730/000110465925073753/"
         }
       ],
-      "collected_at": "2026-06-02T12:00:04.872Z"
+      "collected_at": "2026-06-02T14:00:04.557Z"
     }
   ]
 }
