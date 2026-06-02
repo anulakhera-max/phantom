@@ -32,7 +32,29 @@ function fetchText(url) {
 function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));
 }
-
+// ── DISCOVER ACTUAL XML FILENAME FROM EDGAR INDEX ────────
+async function discoverInfoTableUrl(accessionUrl) {
+  // Extract CIK and accession from URL
+  // URL format: https://www.sec.gov/Archives/edgar/data/{CIK}/{ACCESSION}/
+  const parts = accessionUrl.replace('https://www.sec.gov/Archives/edgar/data/', '').split('/');
+  const cik = parts[0];
+  const accession = parts[1];
+  
+  // Fetch the filing index JSON from EDGAR API
+  const indexUrl = `https://data.sec.gov/submissions/CIK${cik.padStart(10,'0')}.json`;
+  
+  // Known XML filenames to try — in priority order
+  const candidates = [
+    accessionUrl + 'infotable.xml',
+    accessionUrl + 'form13fInfoTable.xml',
+    accessionUrl + 'xslForm13F_X02/infotable.xml',
+    accessionUrl + 'xslForm13F_X02/form13fInfoTable.xml',
+    accessionUrl + 'holding.xml',
+    accessionUrl + 'xslForm13F_X02/holding.xml',
+  ];
+  
+  return candidates;
+}
 // ── PARSE infotable.xml ──────────────────────────────────
 function parseInfoTable(xml) {
   const positions = [];
@@ -78,11 +100,13 @@ async function fetchPositions(entity_id, entity_name, accessionUrl) {
     // Build infotable.xml URL from accession folder URL
     // Try multiple known XML locations used by different filers
     const candidates = [
-      accessionUrl + 'infotable.xml',
-      accessionUrl + 'xslForm13F_X02/infotable.xml',
-      accessionUrl + 'form13fInfoTable.xml',
-      accessionUrl + 'xslForm13F_X02/form13fInfoTable.xml',
-    ];
+  accessionUrl + 'infotable.xml',
+  accessionUrl + 'xslForm13F_X02/infotable.xml',
+  accessionUrl + 'form13fInfoTable.xml',
+  accessionUrl + 'xslForm13F_X02/form13fInfoTable.xml',
+  accessionUrl + 'holding.xml',
+  accessionUrl + 'xslForm13F_X02/holding.xml',
+];
 
     let xml = '';
     let infoUrl = '';
