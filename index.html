@@ -562,6 +562,7 @@
 <script>
 // ── CONFIG ──────────────────────────────────────────────
 const DATA_URL = 'https://raw.githubusercontent.com/anulakhera-max/phantom/main/data/signals/form4.json';
+const POSITIONS_URL = 'https://raw.githubusercontent.com/anulakhera-max/phantom/main/data/signals/positions.json';
 
 // ── STATE ────────────────────────────────────────────────
 let currentView = 'command';
@@ -570,14 +571,18 @@ let signalData = null;
 // ── INIT ─────────────────────────────────────────────────
 async function init() {
   try {
-    const res = await fetch(DATA_URL + '?t=' + Date.now());
-    signalData = await res.json();
+    const [sigRes, posRes] = await Promise.all([
+      fetch(DATA_URL + '?t=' + Date.now()),
+      fetch(POSITIONS_URL + '?t=' + Date.now())
+    ]);
+    signalData = await sigRes.json();
+    positionData = await posRes.json();
     updateMasthead();
     buildTicker();
     render();
   } catch (err) {
     document.getElementById('mainContent').innerHTML =
-      `<div class="state-msg"><span class="big">No Signal</span>Could not reach data source. Agent may be initializing.</div>`;
+      `<div class="state-msg"><span class="big">No Signal</span>Could not reach data source.</div>`;
   }
 }
 
