@@ -10,9 +10,13 @@ console.log('[PHANTOM] ' + new Date().toISOString());
 // are stubbed here so the schedule is visible and ready.
 
 // EDGAR — Form 4, 13F, 13D/G — every 2 hours
-cron.schedule('0 */2 * * *', () => {
+cron.schedule('0 */2 * * *', async () => {
   console.log('[EDGAR] Running Form 4 collector...');
-  require('./agents/edgar.cjs').run();
+  await require('./agents/edgar.cjs').run();
+  console.log('[FILING-READER] Parsing positions...');
+  await require('./agents/filing-reader.cjs').run();
+  console.log('[ANALYZER] Running Claude analysis...');
+  await require('./agents/analyzer.cjs').run();
 });
 
 // Congressional trades — every 4 hours
