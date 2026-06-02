@@ -1,0 +1,496 @@
+{
+  "meta": {
+    "collected_at": "2026-06-02T01:26:22.216Z",
+    "entity_count": 15,
+    "signal_count": 12,
+    "breaking_points": []
+  },
+  "signals": [
+    {
+      "entity_id": "blackrock",
+      "entity_name": "BlackRock",
+      "type": "13F",
+      "tier": "A",
+      "filings": [
+        {
+          "form": "13F-HR",
+          "date": "2024-08-13",
+          "accession": "0001086364-24-008417",
+          "cik": "0001364742",
+          "url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424008417/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2024-05-10",
+          "accession": "0001086364-24-007638",
+          "cik": "0001364742",
+          "url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424007638/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2024-02-13",
+          "accession": "0001086364-24-006999",
+          "cik": "0001364742",
+          "url": "https://www.sec.gov/Archives/edgar/data/1364742/000108636424006999/"
+        }
+      ],
+      "collected_at": "2026-06-02T01:26:09.193Z"
+    },
+    {
+      "entity_id": "vanguard",
+      "entity_name": "Vanguard",
+      "type": "13F",
+      "tier": "A",
+      "filings": [
+        {
+          "form": "13F-HR",
+          "date": "2026-01-29",
+          "accession": "0000102909-26-000031",
+          "cik": "0000102909",
+          "url": "https://www.sec.gov/Archives/edgar/data/102909/000010290926000031/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-11-07",
+          "accession": "0000102909-25-000353",
+          "cik": "0000102909",
+          "url": "https://www.sec.gov/Archives/edgar/data/102909/000010290925000353/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-08-11",
+          "accession": "0001752724-25-185843",
+          "cik": "0000102909",
+          "url": "https://www.sec.gov/Archives/edgar/data/102909/000175272425185843/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-05-09",
+          "accession": "0001752724-25-099331",
+          "cik": "0000102909",
+          "url": "https://www.sec.gov/Archives/edgar/data/102909/000175272425099331/"
+        }
+      ],
+      "collected_at": "2026-06-02T01:26:10.045Z"
+    },
+    {
+      "entity_id": "statestreet",
+      "entity_name": "State Street",
+      "type": "13F",
+      "tier": "A",
+      "filings": [
+        {
+          "form": "13F-HR",
+          "date": "2026-05-15",
+          "accession": "0000093751-26-000315",
+          "cik": "0000093751",
+          "url": "https://www.sec.gov/Archives/edgar/data/93751/000009375126000315/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2026-02-13",
+          "accession": "0000093751-26-000100",
+          "cik": "0000093751",
+          "url": "https://www.sec.gov/Archives/edgar/data/93751/000009375126000100/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-11-14",
+          "accession": "0000093751-25-000651",
+          "cik": "0000093751",
+          "url": "https://www.sec.gov/Archives/edgar/data/93751/000009375125000651/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-08-14",
+          "accession": "0000093751-25-000521",
+          "cik": "0000093751",
+          "url": "https://www.sec.gov/Archives/edgar/data/93751/000009375125000521/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-05-15",
+          "accession": "0000093751-25-000351",
+          "cik": "0000093751",
+          "url": "https://www.sec.gov/Archives/edgar/data/93751/000009375125000351/"
+        }
+      ],
+      "collected_at": "2026-06-02T01:26:10.502Z"
+    },
+    {
+      "entity_id": "bridgewater",
+      "entity_name": "Bridgewater Associates",
+      "type": "13F",
+      "tier": "A",
+      "filings": [
+        {
+          "form": "13F-HR",
+          "date": "2026-05-15",
+          "accession": "0001350694-26-000002",
+          "cik": "0001350694",
+          "url": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000002/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2026-02-13",
+          "accession": "0001350694-26-000001",
+          "cik": "0001350694",
+          "url": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000001/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-11-13",
+          "accession": "0001172661-25-004777",
+          "cik": "0001350694",
+          "url": "https://www.sec.gov/Archives/edgar/data/1350694/000117266125004777/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-08-13",
+          "accession": "0001172661-25-003151",
+          "cik": "0001350694",
+          "url": "https://www.sec.gov/Archives/edgar/data/1350694/000117266125003151/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-05-14",
+          "accession": "0001172661-25-001828",
+          "cik": "0001350694",
+          "url": "https://www.sec.gov/Archives/edgar/data/1350694/000117266125001828/"
+        }
+      ],
+      "collected_at": "2026-06-02T01:26:11.158Z"
+    },
+    {
+      "entity_id": "renaissance",
+      "entity_name": "Renaissance Technologies",
+      "type": "13F",
+      "tier": "A",
+      "filings": [
+        {
+          "form": "13F-HR",
+          "date": "2026-05-14",
+          "accession": "0001037389-26-000033",
+          "cik": "0001037389",
+          "url": "https://www.sec.gov/Archives/edgar/data/1037389/000103738926000033/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2026-02-12",
+          "accession": "0001037389-26-000023",
+          "cik": "0001037389",
+          "url": "https://www.sec.gov/Archives/edgar/data/1037389/000103738926000023/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-11-13",
+          "accession": "0001037389-25-000064",
+          "cik": "0001037389",
+          "url": "https://www.sec.gov/Archives/edgar/data/1037389/000103738925000064/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-08-13",
+          "accession": "0001037389-25-000034",
+          "cik": "0001037389",
+          "url": "https://www.sec.gov/Archives/edgar/data/1037389/000103738925000034/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-05-14",
+          "accession": "0001037389-25-000023",
+          "cik": "0001037389",
+          "url": "https://www.sec.gov/Archives/edgar/data/1037389/000103738925000023/"
+        }
+      ],
+      "collected_at": "2026-06-02T01:26:11.604Z"
+    },
+    {
+      "entity_id": "deshaw",
+      "entity_name": "DE Shaw",
+      "type": "13F",
+      "tier": "A",
+      "filings": [
+        {
+          "form": "13F-HR",
+          "date": "2026-05-15",
+          "accession": "0001104659-26-062472",
+          "cik": "0001009207",
+          "url": "https://www.sec.gov/Archives/edgar/data/1009207/000110465926062472/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2026-02-17",
+          "accession": "0001104659-26-016332",
+          "cik": "0001009207",
+          "url": "https://www.sec.gov/Archives/edgar/data/1009207/000110465926016332/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-11-14",
+          "accession": "0001104659-25-112505",
+          "cik": "0001009207",
+          "url": "https://www.sec.gov/Archives/edgar/data/1009207/000110465925112505/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-08-14",
+          "accession": "0001104659-25-078542",
+          "cik": "0001009207",
+          "url": "https://www.sec.gov/Archives/edgar/data/1009207/000110465925078542/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-05-15",
+          "accession": "0001104659-25-049422",
+          "cik": "0001009207",
+          "url": "https://www.sec.gov/Archives/edgar/data/1009207/000110465925049422/"
+        }
+      ],
+      "collected_at": "2026-06-02T01:26:12.403Z"
+    },
+    {
+      "entity_id": "goldman",
+      "entity_name": "Goldman Sachs",
+      "type": "13F",
+      "tier": "A",
+      "filings": [
+        {
+          "form": "13F-HR",
+          "date": "2026-05-15",
+          "accession": "0000886982-26-000274",
+          "cik": "0000886982",
+          "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000274/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2026-02-10",
+          "accession": "0000886982-26-000052",
+          "cik": "0000886982",
+          "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000052/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-11-14",
+          "accession": "0000886982-25-001521",
+          "cik": "0000886982",
+          "url": "https://www.sec.gov/Archives/edgar/data/886982/000088698225001521/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-08-14",
+          "accession": "0000769993-25-000537",
+          "cik": "0000886982",
+          "url": "https://www.sec.gov/Archives/edgar/data/886982/000076999325000537/"
+        }
+      ],
+      "collected_at": "2026-06-02T01:26:15.111Z"
+    },
+    {
+      "entity_id": "jpmorgan",
+      "entity_name": "JPMorgan Chase",
+      "type": "13F",
+      "tier": "A",
+      "filings": [
+        {
+          "form": "13F-HR",
+          "date": "2026-05-13",
+          "accession": "0000019617-26-000212",
+          "cik": "0000019617",
+          "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961726000212/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2026-02-11",
+          "accession": "0000019617-26-000083",
+          "cik": "0000019617",
+          "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961726000083/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-11-07",
+          "accession": "0000019617-25-001081",
+          "cik": "0000019617",
+          "url": "https://www.sec.gov/Archives/edgar/data/19617/000001961725001081/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-08-12",
+          "accession": "0000919185-25-000009",
+          "cik": "0000019617",
+          "url": "https://www.sec.gov/Archives/edgar/data/19617/000091918525000009/"
+        }
+      ],
+      "collected_at": "2026-06-02T01:26:17.718Z"
+    },
+    {
+      "entity_id": "morganstanley",
+      "entity_name": "Morgan Stanley",
+      "type": "13F",
+      "tier": "A",
+      "filings": [
+        {
+          "form": "13F-HR",
+          "date": "2026-05-15",
+          "accession": "0000895421-26-000183",
+          "cik": "0000895421",
+          "url": "https://www.sec.gov/Archives/edgar/data/895421/000089542126000183/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2026-02-13",
+          "accession": "0000895421-26-000080",
+          "cik": "0000895421",
+          "url": "https://www.sec.gov/Archives/edgar/data/895421/000089542126000080/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-11-14",
+          "accession": "0000895421-25-000593",
+          "cik": "0000895421",
+          "url": "https://www.sec.gov/Archives/edgar/data/895421/000089542125000593/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-08-14",
+          "accession": "0000895421-25-000499",
+          "cik": "0000895421",
+          "url": "https://www.sec.gov/Archives/edgar/data/895421/000089542125000499/"
+        }
+      ],
+      "collected_at": "2026-06-02T01:26:20.674Z"
+    },
+    {
+      "entity_id": "leopold",
+      "entity_name": "Leopold Aschenbrenner",
+      "type": "13F",
+      "tier": "A",
+      "filings": [
+        {
+          "form": "13F-HR",
+          "date": "2026-05-18",
+          "accession": "0002045724-26-000008",
+          "cik": "0002045724",
+          "url": "https://www.sec.gov/Archives/edgar/data/2045724/000204572426000008/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2026-02-11",
+          "accession": "0002045724-26-000002",
+          "cik": "0002045724",
+          "url": "https://www.sec.gov/Archives/edgar/data/2045724/000204572426000002/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-11-14",
+          "accession": "0002045724-25-000008",
+          "cik": "0002045724",
+          "url": "https://www.sec.gov/Archives/edgar/data/2045724/000204572425000008/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-08-14",
+          "accession": "0002045724-25-000006",
+          "cik": "0002045724",
+          "url": "https://www.sec.gov/Archives/edgar/data/2045724/000204572425000006/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-05-14",
+          "accession": "0002045724-25-000002",
+          "cik": "0002045724",
+          "url": "https://www.sec.gov/Archives/edgar/data/2045724/000204572425000002/"
+        }
+      ],
+      "collected_at": "2026-06-02T01:26:20.983Z"
+    },
+    {
+      "entity_id": "raydalio",
+      "entity_name": "Ray Dalio",
+      "type": "13F",
+      "tier": "A",
+      "filings": [
+        {
+          "form": "13F-HR",
+          "date": "2026-05-15",
+          "accession": "0001350694-26-000002",
+          "cik": "0001350694",
+          "url": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000002/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2026-02-13",
+          "accession": "0001350694-26-000001",
+          "cik": "0001350694",
+          "url": "https://www.sec.gov/Archives/edgar/data/1350694/000135069426000001/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-11-13",
+          "accession": "0001172661-25-004777",
+          "cik": "0001350694",
+          "url": "https://www.sec.gov/Archives/edgar/data/1350694/000117266125004777/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-08-13",
+          "accession": "0001172661-25-003151",
+          "cik": "0001350694",
+          "url": "https://www.sec.gov/Archives/edgar/data/1350694/000117266125003151/"
+        },
+        {
+          "form": "13F-HR",
+          "date": "2025-05-14",
+          "accession": "0001172661-25-001828",
+          "cik": "0001350694",
+          "url": "https://www.sec.gov/Archives/edgar/data/1350694/000117266125001828/"
+        }
+      ],
+      "collected_at": "2026-06-02T01:26:21.678Z"
+    },
+    {
+      "entity_id": "musk",
+      "entity_name": "Elon Musk",
+      "type": "form4",
+      "tier": "A",
+      "filings": [
+        {
+          "form": "4",
+          "date": "2026-04-23",
+          "accession": "0001104659-26-047678",
+          "cik": "0001494730",
+          "url": "https://www.sec.gov/Archives/edgar/data/1494730/000110465926047678/"
+        },
+        {
+          "form": "4",
+          "date": "2025-12-31",
+          "accession": "0001104659-25-125703",
+          "cik": "0001494730",
+          "url": "https://www.sec.gov/Archives/edgar/data/1494730/000110465925125703/"
+        },
+        {
+          "form": "4",
+          "date": "2025-11-10",
+          "accession": "0001104659-25-109263",
+          "cik": "0001494730",
+          "url": "https://www.sec.gov/Archives/edgar/data/1494730/000110465925109263/"
+        },
+        {
+          "form": "4",
+          "date": "2025-09-15",
+          "accession": "0001104659-25-089693",
+          "cik": "0001494730",
+          "url": "https://www.sec.gov/Archives/edgar/data/1494730/000110465925089693/"
+        },
+        {
+          "form": "4",
+          "date": "2025-08-04",
+          "accession": "0001104659-25-073753",
+          "cik": "0001494730",
+          "url": "https://www.sec.gov/Archives/edgar/data/1494730/000110465925073753/"
+        }
+      ],
+      "collected_at": "2026-06-02T01:26:22.005Z"
+    }
+  ]
+}
