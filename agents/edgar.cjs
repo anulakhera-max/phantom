@@ -41,29 +41,33 @@ function sleep(ms) {
 
 // ── CORE LOGIC ──────────────────────────────────────────
 async function getRecentFilings(cik, formType = '4') {
-  // Pad CIK to 10 digits as required by EDGAR
   const paddedCik = String(cik).replace(/^0+/, '').padStart(10, '0');
   const urlPath = `/submissions/CIK${paddedCik}.json`;
 
   try {
     const data = await get(EDGAR_BASE, urlPath);
-    if (!data.filings || !data.filings.recent) return [];
+    if (!data || !data.filings || !data.filings.recent) return [];
 
-    const { form, date, accessionNumber } = data.filings.recent;
+    const recent = data.filings.recent;
+    const forms = recent.form || [];
+    const dates = recent.filed || recent.date || [];
+    const accessions = recent.accessionNumber || [];
+
     const results = [];
+    const len = Math.min(forms.length, dates.length, accessions.length);
 
-    for (let i = 0; i < form.length; i++) {
-      if (form[i] === formType) {
+    for (let i = 0; i < len; i++) {
+      if (forms[i] === formType) {
         results.push({
-          form: form[i],
-          date: date[i],
-          accession: accessionNumber[i],
+          form: forms[i],
+          date: dates[i],
+          accession: accessions[i],
           cik: paddedCik,
           url: `https://www.sec.gov/Archives/edgar/data/${parseInt(paddedCik)}/` +
-               `${accessionNumber[i].replace(/-/g, '')}/`
+               `${accessions[i].replace(/-/g, '')}/`
         });
       }
-      if (results.length >= 5) break; // last 5 per entity
+      if (results.length >= 5) break;
     }
     return results;
   } catch (err) {
@@ -87,11 +91,10 @@ async function run() {
 
   // Filter to entities with CIK and Form 4 signal
   const targets = entities.filter(e =>
-    e.cik &&
-    e.cik !== 'multiple' &&
-    e.cik !== null &&
-    e.signals.includes('form4') || (e.signals.includes('13F') && e.cik)
-  );
+  e.cik &&
+  e.cik !== 'multiple' &&
+  (e.signals.includes('form4') || e.signals.includes('13F'))
+);
 
   console.log(`[EDGAR] Scanning ${targets.length} entities...`);
 
