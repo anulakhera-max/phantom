@@ -58,13 +58,13 @@ async function discoverInfoTableUrl(accessionUrl) {
 // ── PARSE infotable.xml ──────────────────────────────────
 function parseInfoTable(xml) {
   const positions = [];
-  const entryRegex = /<infoTable>([\s\S]*?)<\/infoTable>/g;
+  const entryRegex = /<(?:\w+:)?infoTable>([\s\S]*?)<\/(?:\w+:)?infoTable>/g;
   let match;
 
   while ((match = entryRegex.exec(xml)) !== null) {
     const block = match[1];
     const get = (tag) => {
-      const m = block.match(new RegExp(`<${tag}[^>]*>([^<]*)<\/${tag}>`));
+      const m = block.match(new RegExp(`<(?:\\w+:)?${tag}[^>]*>([^<]*)<\\/(?:\\w+:)?${tag}>`));
       return m ? m[1].trim() : '';
     };
 
@@ -94,34 +94,60 @@ function parseInfoTable(xml) {
   return positions.sort((a, b) => b.value_usd - a.value_usd);
 }
 
-// ── FETCH POSITIONS FOR ONE ENTITY ───────────────────────
 async function fetchPositions(entity_id, entity_name, accessionUrl) {
   try {
-    // Build infotable.xml URL from accession folder URL
-    // Try multiple known XML locations used by different filers
-    const candidates = [
-  accessionUrl + 'infotable.xml',
-  accessionUrl + 'xslForm13F_X02/infotable.xml',
-  accessionUrl + 'form13fInfoTable.xml',
-  accessionUrl + 'xslForm13F_X02/form13fInfoTable.xml',
-  accessionUrl + 'holding.xml',
-  accessionUrl + 'xslForm13F_X02/holding.xml',
-];
+    // Extract CIK and accession from URL
+    const urlParts = accessionUrl.replace('https://www.sec.gov/Archives/edgar/data/', '').split('/');
+    const cik = urlParts[0];
+    const accessionRaw = urlParts[1];
+    const accessionDashed = accessionRaw.replace(/(\d{10})(\d{2})(\d{6})/, '$1-$2-$3');
 
-    let xml = '';
-    let infoUrl = '';
-    for (const candidate of candidates) {
-      infoUrl = candidate;
-      console.log(`[READER] Trying: ${candidate}`);
-      xml = await fetchText(candidate);
-      if (xml && xml.includes('<infoTable>')) break;
-      xml = '';
-      await sleep(150);
+    // Fetch filing index to discover actual XML filename
+    const indexUrl = `https://www.sec.gov/Archives/edgar/data/${cik}/${accessionRaw}/${accessionDashed}-index.htm`;
+    console.log(`[READER] Fetching index for ${entity_name}...`);
+    const indexHtml = await fetchText(indexUrl);
+
+    // Extract all XML file hrefs from index
+    const xmlFiles = [];
+    const hrefRegex = /href="([^"]*\.xml)"/g;
+    let m;
+    while ((m = hrefRegex.exec(indexHtml)) !== null) {
+      const href = m[1];
+      // Skip primary_doc and xslForm variants — we want the data file
+      if (!href.includes('primary_doc') && !href.includes('xslForm13F_X02/')) {
+        xmlFiles.push('https://www.sec.gov' + href);
+      }
     }
 
+    console.log(`[READER] Found XML candidates: ${xmlFiles.join(', ')}`);
 
+    // Try each discovered XML file
+    let xml = '';
+    let infoUrl = '';
+    for (const candidate of xmlFiles) {
+      infoUrl = candidate;
+      xml = await fetchText(candidate);
+      if (xml && (xml.includes('<infoTable>') || xml.includes(':infoTable>'))) break;
+      xml = '';
+      await sleep(200);
+    }
 
-    if (!xml || xml.length < 100 || !xml.includes('<infoTable>')) {
+    // Fallback to static candidates if index approach failed
+    if (!xml) {
+      const staticCandidates = [
+        accessionUrl + 'infotable.xml',
+        accessionUrl + 'form13fInfoTable.xml',
+        accessionUrl + 'informationtable.xml',
+      ];
+      for (const candidate of staticCandidates) {
+        xml = await fetchText(candidate);
+        if (xml && (xml.includes('<infoTable>') || xml.includes(':infoTable>'))) { infoUrl = candidate; break; }
+        xml = '';
+        await sleep(150);
+      }
+    }
+
+    if (!xml || xml.length < 100 || (!xml.includes('<infoTable>') && !xml.includes(':infoTable>'))) {
       console.log(`[READER] — ${entity_name}: no infotable found`);
       return null;
     }
