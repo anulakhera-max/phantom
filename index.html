@@ -521,6 +521,7 @@
   <button class="nav-tab active" onclick="setView('command')">Command</button>
   <button class="nav-tab" onclick="setView('entities')">Entities</button>
   <button class="nav-tab" onclick="setView('holdings')">Holdings</button>
+  <button class="nav-tab" onclick="setView('analysis')">Analysis</button>
   <button class="nav-tab" onclick="setView('gaps')">Signal Gaps</button>
 </nav>
 
@@ -538,19 +539,21 @@
 <script>
 const DATA_URL = 'https://raw.githubusercontent.com/anulakhera-max/phantom/main/data/signals/form4.json';
 const POSITIONS_URL = 'https://raw.githubusercontent.com/anulakhera-max/phantom/main/data/signals/positions.json';
-
+const ANALYSIS_URL = 'https://raw.githubusercontent.com/anulakhera-max/phantom/main/data/signals/analysis.json';
 let currentView = 'command';
 let signalData = null;
 let positionData = null;
-
+let analysisData = null;
 async function init() {
   try {
-    const [sigRes, posRes] = await Promise.all([
-      fetch(DATA_URL + '?t=' + Date.now()),
-      fetch(POSITIONS_URL + '?t=' + Date.now())
-    ]);
-    signalData = await sigRes.json();
-    positionData = await posRes.json();
+    const [sigRes, posRes, anaRes] = await Promise.all([
+  fetch(DATA_URL + '?t=' + Date.now()),
+  fetch(POSITIONS_URL + '?t=' + Date.now()),
+  fetch(ANALYSIS_URL + '?t=' + Date.now())
+]);
+signalData = await sigRes.json();
+positionData = await posRes.json();
+analysisData = await anaRes.json();
     updateMasthead();
     buildTicker();
     render();
@@ -587,7 +590,7 @@ function buildTicker() {
 function setView(view) {
   currentView = view;
   document.querySelectorAll('.nav-tab').forEach((t, i) => {
-    t.classList.toggle('active', ['command','entities','holdings','gaps'][i] === view);
+    t.classList.toggle('active', ['command','entities','holdings','analysis','gaps'][i] === view)
   });
   render();
 }
@@ -597,6 +600,7 @@ function render() {
   if (currentView === 'command') renderCommand();
   else if (currentView === 'entities') renderEntities();
   else if (currentView === 'holdings') renderHoldings();
+  else if (currentView === 'analysis') renderAnalysis();
   else renderGaps();
 }
 
@@ -782,7 +786,43 @@ function renderHoldings() {
     </div>
   `;
 }
-
+function renderAnalysis() {
+  if (!analysisData) {
+    document.getElementById('mainContent').innerHTML =
+      `<div class="state-msg"><span class="big">No Analysis</span>Run analyzer agent first.</div>`;
+    return;
+  }
+  document.getElementById('mainContent').innerHTML = `
+    <div class="fade-in stagger-1">
+      <div class="section-header">
+        <div class="section-title">Intelligence Analysis</div>
+        <div class="section-meta">Claude · ${analysisData.meta.entity_count} entities · ${new Date(analysisData.meta.analyzed_at).toLocaleDateString()}</div>
+      </div>
+      ${analysisData.analyses.map(a => `
+        <div style="margin-bottom:1rem;background:var(--surface);border:1px solid var(--border)">
+          <div style="padding:1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+            <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--bright)">${a.entity_name}</div>
+            <div style="font-family:'DM Mono',monospace;font-size:0.6rem;color:var(--dim)">$${a.aum_b.toLocaleString()}B · ${a.total_positions.toLocaleString()} positions</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border)">
+            <div style="background:var(--ink);padding:1.25rem">
+              <div style="font-family:'DM Mono',monospace;font-size:0.58rem;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.6rem">The Position</div>
+              <div style="font-family:'DM Sans',sans-serif;font-size:0.78rem;color:var(--text);line-height:1.6">${a.analysis.the_position || '—'}</div>
+            </div>
+            <div style="background:var(--ink);padding:1.25rem">
+              <div style="font-family:'DM Mono',monospace;font-size:0.58rem;color:var(--blue);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.6rem">The Thesis</div>
+              <div style="font-family:'DM Sans',sans-serif;font-size:0.78rem;color:var(--text);line-height:1.6">${a.analysis.the_thesis || '—'}</div>
+            </div>
+            <div style="background:var(--ink);padding:1.25rem">
+              <div style="font-family:'DM Mono',monospace;font-size:0.58rem;color:var(--green);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.6rem">The Signal</div>
+              <div style="font-family:'DM Sans',sans-serif;font-size:0.78rem;color:var(--text);line-height:1.6">${a.analysis.the_signal || '—'}</div>
+            </div>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
 function renderGaps() {
   const gaps = [
     { name: 'SEC EDGAR 13F', status: 'live', note: 'Institutional holdings — 45 day lag structural' },
