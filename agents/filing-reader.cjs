@@ -76,9 +76,23 @@ function parseInfoTable(xml) {
 async function fetchPositions(entity_id, entity_name, accessionUrl) {
   try {
     // Build infotable.xml URL from accession folder URL
-    const infoUrl = accessionUrl.endsWith('/')
-      ? accessionUrl + 'infotable.xml'
-      : accessionUrl + '/infotable.xml';
+    // Try multiple known XML locations used by different filers
+    const candidates = [
+      accessionUrl + 'infotable.xml',
+      accessionUrl + 'xslForm13F_X02/infotable.xml',
+      accessionUrl + 'form13fInfoTable.xml',
+      accessionUrl + 'xslForm13F_X02/form13fInfoTable.xml',
+    ];
+
+    let xml = '';
+    let infoUrl = '';
+    for (const candidate of candidates) {
+      infoUrl = candidate;
+      xml = await fetchText(candidate);
+      if (xml && xml.includes('<infoTable>')) break;
+      xml = '';
+      await sleep(150);
+    }
 
     console.log(`[READER] Fetching ${entity_name} positions...`);
     const xml = await fetchText(infoUrl);
