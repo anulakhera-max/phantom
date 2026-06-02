@@ -50,7 +50,7 @@ async function getRecentFilings(cik, formType = '4') {
 
     const recent = data.filings.recent;
     const forms = recent.form || [];
-    const dates = recent.filed || recent.date || [];
+    const dates = recent.filingDate || recent.filed || recent.date || [];
     const accessions = recent.accessionNumber || [];
 
     const results = [];
