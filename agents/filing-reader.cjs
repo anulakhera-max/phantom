@@ -88,6 +88,7 @@ async function fetchPositions(entity_id, entity_name, accessionUrl) {
     let infoUrl = '';
     for (const candidate of candidates) {
       infoUrl = candidate;
+      console.log(`[READER] Trying: ${candidate}`);
       xml = await fetchText(candidate);
       if (xml && xml.includes('<infoTable>')) break;
       xml = '';
