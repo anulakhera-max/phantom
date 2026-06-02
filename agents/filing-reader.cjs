@@ -94,8 +94,7 @@ async function fetchPositions(entity_id, entity_name, accessionUrl) {
       await sleep(150);
     }
 
-    console.log(`[READER] Fetching ${entity_name} positions...`);
-    const xml = await fetchText(infoUrl);
+
 
     if (!xml || xml.length < 100 || !xml.includes('<infoTable>')) {
       console.log(`[READER] — ${entity_name}: no infotable found`);
