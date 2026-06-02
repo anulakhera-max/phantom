@@ -12,7 +12,7 @@ console.log('[PHANTOM] ' + new Date().toISOString());
 // EDGAR — Form 4, 13F, 13D/G — every 2 hours
 cron.schedule('0 */2 * * *', () => {
   console.log('[EDGAR] Running Form 4 collector...');
-  // require('./agents/edgar.cjs').run();
+  require('./agents/edgar.cjs').run();
 });
 
 // Congressional trades — every 4 hours
